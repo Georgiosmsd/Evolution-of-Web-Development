@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/2020-2025.css" />
+    <title>Evolution of Web Development</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.4/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useState, useEffect } = React;
+
+      const Navigation = () => {
+        return (
+          <nav className="glass-card animated fadeInUp">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}>
+              <div
+                style={{
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  color: "var(--primary)",
+                }}>
+                Web<span style={{ color: "var(--secondary)" }}>History</span>
+              </div>
+              <div style={{ display: "flex", gap: "20px" }}>
+                <a
+                  style={{
+                    color: "var(--dark)",
+                    textDecoration: "none",
+                    fontWeight: 500,
+                  }}
+                  href="Introduction.html">
+                  Introduction
+                </a>
+                <a
+                  style={{
+                    color: "var(--dark)",
+                    textDecoration: "none",
+                    fontWeight: 500,
+                  }}
+                  href="1990-1995.html">
+                  1990-1995
+                </a>
+                <a
+                  style={{
+                    color: "var(--dark)",
+                    textDecoration: "none",
+                    fontWeight: 500,
+                  }}
+                  href="1995-2000.html">
+                  1996-2000
+                </a>
+                <a
+                  style={{
+                    color: "var(--dark)",
+                    textDecoration: "none",
+                    fontWeight: 500,
+                  }}
+                  href="2000-2005.html">
+                  2001-2005
+                </a>
+                <a
+                  style={{
+                    color: "var(--dark)",
+                    textDecoration: "none",
+                    fontWeight: 500,
+                  }}
+                  href="2005-2010.html">
+                  2006-2010
+                </a>
+                <a
+                  style={{
+                    color: "var(--dark)",
+                    textDecoration: "none",
+                    fontWeight: 500,
+                  }}
+                  href="2010-2015.html">
+                  2011-2015
+                </a>
+                <a
+                  style={{
+                    color: "var(--dark)",
+                    textDecoration: "none",
+                    fontWeight: 500,
+                  }}
+                  href="2015-2020.html">
+                  2016-2020
+                </a>
+                <a
+                  style={{
+                    color: "var(--dark)",
+                    textDecoration: "none",
+                    fontWeight: 500,
+                  }}
+                  href="2020-2025.html">
+                  2021-2025
+                </a>
+              </div>
+            </div>
+          </nav>
+        );
+      };
+
+      const Hero = () => {
+        return (
+          <section
+            className="glass-card animated fadeInUp delay-1"
+            style={{ textAlign: "center", padding: "60px 30px" }}>
+            <h1 style={{ fontSize: "42px", marginBottom: "20px" }}>
+              <span style={{ color: "var(--primary)" }}>Evolution</span> of Web
+              Design
+            </h1>
+            <h1 style={{ fontSize: "30px", marginBottom: "20px" }}>
+              <span style={{ color: "var(--primary)" }}>2021</span>-2025
+            </h1>
+            <p
+              style={{
+                fontSize: "18px",
+                maxWidth: "600px",
+                margin: "0 auto",
+                marginBottom: "30px",
+                lineHeight: "1.6",
+              }}>
+              Between 2021 and 2025, web development has changed a lot to meet
+              new demands. Developers started using better tools to build
+              faster, more flexible, and user-friendly websites and apps. The
+              focus shifted toward speed, easier updates, and smoother
+              experiences on all devices. New ideas and technologies helped
+              teams work more efficiently and create modern websites that are
+              easier to manage, more secure, and ready for the future.
+            </p>
+          </section>
+        );
+      };
+
+      const FeatureCard = ({ icon, title, description }) => {
+        return (
+          <div className="glass-card" style={{ flex: 1, minWidth: "250px" }}>
+            <div
+              style={{
+                fontSize: "36px",
+                marginBottom: "15px",
+                color: "var(--primary)",
+              }}>
+              {icon}
+            </div>
+            <h3 style={{ marginBottom: "10px", fontSize: "20px" }}>{title}</h3>
+            <p style={{ lineHeight: "1.6", fontSize: "16px" }}>{description}</p>
+          </div>
+        );
+      };
+
+      const Year2021 = () => {
+        const [activeTab, setActiveTab] = useState(0);
+
+        const tabs = [
+          {
+            name: "Vite 2.0",
+            content:
+              "Vite 2.0 gained popularity as a super-fast tool for building modern web apps. It made development faster by instantly starting the project and quickly updating the page when changes were made. Unlike older tools that bundled everything up front, Vite loaded files only when needed. This saved time and made coding feel smoother, especially for projects with lots of files.",
+          },
+          {
+            name: "Next.js 10.2",
+            content:
+              "In May, Next.js 10.2 was released with important improvements to website speed and user experience. It made it easier for developers to meet Core Web Vitals, a set of performance standards used by Google. The update also included automatic image optimisation and better support for code checking tools. These changes helped developers build websites that load faster and work more smoothly across different devices.",
+          },
+          {
+            name: "Bootstrap 5.1",
+            content:
+              "Bootstrap 5.1 was released with several updates to help developers design modern websites more easily. This version removed the need for jQuery which made projects lighter and faster. It also introduced new layout tools like the offcanvas component and updated the grid system for better flexibility. These improvements made it easier to create responsive and mobile-friendly web layouts.",
+          },
+          {
+            name: "Angular 12.2",
+            content:
+              "Angular 12.2 brought improvements to app speed, build time and overall developer experience. It added better support for the CLI (command line interface), stronger type checking and performance updates through Angular’s Ivy rendering engine. These changes made Angular apps run faster and helped developers catch errors earlier in the development process.",
+          },
+          {
+            name: "Visual Studio Code for the Web",
+            content:
+              "Visual Studio Code for the Web was launched, letting developers use a version of VS Code directly in their browser without needing to install anything. It worked with files from your computer or GitHub and supported many features like editing, syntax highlighting and extensions. This made it easier to code from anywhere on any device with a web browser.",
+          },
+          {
+            name: "Conclusion",
+            content:
+              "In the end of 2021, updates like Next.js 10.2, Vite 2.0, Visual Studio Code for the Web, Angular 12.2, and Bootstrap 5.1 had made web development faster, smoother and more accessible. These tools helped developers improve performance, streamline workflows and build responsive designs more easily. With better speed, real-time editing and flexible layouts and they supported the growing need for efficient and modern digital experiences.",
+          },
+        ];
+
+        return (
+          <section
+            className="glass-card animated fadeInUp delay-3"
+            style={{ marginTop: "40px" }}>
+            <h2
+              style={{
+                textAlign: "center",
+                marginBottom: "30px",
+                fontSize: "32px",
+              }}>
+              Year 2021
+            </h2>
+
+            <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  className="neu-button"
+                  style={{
+                    background:
+                      activeTab === index ? "var(--primary)" : "var(--light)",
+                    color: activeTab === index ? "white" : "var(--primary)",
+                  }}
+                  onClick={() => setActiveTab(index)}>
+                  {tab.name}
+                </button>
+              ))}
+            </div>
+
+            <div
+              className="glass-card"
+              style={{ background: "rgba(255,255,255,0.15)" }}>
+              <p style={{ lineHeight: "1.8", fontSize: "16px" }}>
+                {tabs[activeTab].content}
+              </p>
+            </div>
+          </section>
+        );
+      };
+      const Year2022 = () => {
+        const [activeTab, setActiveTab] = useState(0);
+
+        const tabs = [
+          {
+            name: "Next.js 12.1",
+            content:
+              "Next.js 12.1 added a new feature called middleware which let developers run code before showing a web page. This was useful for tasks like checking if a user is logged in, redirecting them or changing content based on location. The update also improved speed and build times, helping developers create websites that respond quickly and feel smooth for users.",
+          },
+          {
+            name: "React 18",
+            content:
+              "React 18 became stable and introduced features that made apps more responsive and interactive. A key update was automatic batching, which grouped multiple updates together to improve performance. It also added new ways to handle updates with tools like startTransition() and improved support for future features.",
+          },
+          {
+            name: "Astro 1.0 Beta",
+            content:
+              "Astro 1.0 Beta launched and caught the attention of many developers. Astro is a modern tool that helps build websites with fast loading times by sending only the necessary code to the browser. It also allowed developers to use parts of different frameworks like React, Vue or Svelte in the same project. Astro made it easier to create simple, fast websites with less code and better performance.",
+          },
+          {
+            name: "Node.js v18",
+            content:
+              "Node.js v18 was released with several helpful features for developers. One of the most important was the built-in fetch API which made it easier to request data from other servers without needing extra tools. This version also included performance improvements and better support for web standards. It became a Long-Term Support (LTS) version in October, making it a safe and stable choice for long-term projects.",
+          },
+          {
+            name: "Vite 3.0",
+            content:
+              "Vite 3.0, continued to grow as one of the fastest and most modern build tools for web apps. This version improved support for server-side rendering and made tools easier to use. It also made the development process quicker by reducing waiting times when starting or updating a project. Vite 3.0 helped developers work more efficiently and focus more on writing code than waiting for builds to finish.",
+          },
+          {
+            name: "Conclusion",
+            content:
+              "By the end of 2022, tools like Node.js v18, Next.js 12.1, Astro 1.0 Beta, Vite 3.0, and React 18 had helped push web development forward with better speed, flexibility and user experience. These updates made it easier to build websites that load faster, update smoothly and use fewer resources. Developers also gained more options to organize their code, reuse tools and create more powerful and modern apps. Together, these improvements helped shape a faster and more efficient web for both developers and users.",
+          },
+        ];
+
+        return (
+          <section
+            className="glass-card animated fadeInUp delay-3"
+            style={{ marginTop: "40px" }}>
+            <h2
+              style={{
+                textAlign: "center",
+                marginBottom: "30px",
+                fontSize: "32px",
+              }}>
+              Year 2022
+            </h2>
+
+            <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  className="neu-button"
+                  style={{
+                    background:
+                      activeTab === index ? "var(--primary)" : "var(--light)",
+                    color: activeTab === index ? "white" : "var(--primary)",
+                  }}
+                  onClick={() => setActiveTab(index)}>
+                  {tab.name}
+                </button>
+              ))}
+            </div>
+
+            <div
+              className="glass-card"
+              style={{ background: "rgba(255,255,255,0.15)" }}>
+              <p style={{ lineHeight: "1.8", fontSize: "16px" }}>
+                {tabs[activeTab].content}
+              </p>
+            </div>
+          </section>
+        );
+      };
+      const Year2023 = () => {
+        const [activeTab, setActiveTab] = useState(0);
+
+        const tabs = [
+          {
+            name: "Astro 2.0",
+            content:
+              "Astro 2.0 was released, bringing new features that made building websites faster and easier. One standout feature was View Transitions which allowed smooth page animations without complex code. Astro also improved how pages were organized and connected, and it worked even better with other popular tools like React or Vue. These changes helped developers build fast, modern sites with less effort and better results.",
+          },
+          {
+            name: "Vite 5.0",
+            content:
+              "In 2023, the team behind Vite announced version 5.0, focusing on making web development even faster and more flexible. This update improved support for server-side rendering (SSR) and made it easier to create custom plugins. Vite continued to be one of the quickest and most developer-friendly tools for starting and running web projects, helping teams build apps quickly with minimal setup.",
+          },
+          {
+            name: "Next.js 13.4",
+            content:
+              "Next.js 13.4 introduced a major update called the App Router which made it easier to organise and load pages in web apps. This version also included React Server Components which helped apps load faster by sending only the necessary parts to the browser. These improvements gave developers more control over performance, structure and how content appeared for users.",
+          },
+          {
+            name: "edge computing",
+            content:
+              "In 2023, edge computing became a popular way to make websites faster by delivering content from servers closer to the user. Instead of waiting for data from a distant location, edge tools like Cloudflare Workers and Netlify Edge Functions allowed parts of websites to run at the “edge” of the internet. This helped improve loading times, especially for users in different parts of the world and made web apps more responsive and scalable.",
+          },
+          {
+            name: "AI tools",
+            content:
+              "In 2023, more developers started using AI tools to help write and improve their code. Tools like GitHub Copilot, Replit Ghostwriter and others suggested code, fixed bugs and explained complex concepts in real time. These assistants made it faster and easier to build apps, especially for newer developers or teams working on tight deadlines. AI became a regular part of the coding process, saving time and boosting productivity.",
+          },
+          {
+            name: "Conclusion",
+            content:
+              "By the end of 2023, web development had become even more efficient, flexible and performance focused. Tools like Astro 2.0, Next.js 13.4 and Vite 5.0 gave developers better ways to build fast and organised websites. At the same time, trends like the rise of edge computing and AI-powered coding tools helped speed up workflows and improve how apps respond to users. These changes made it easier for developers to create modern, scalable and user-friendly experiences across the web.",
+          },
+        ];
+
+        return (
+          <section
+            className="glass-card animated fadeInUp delay-3"
+            style={{ marginTop: "40px" }}>
+            <h2
+              style={{
+                textAlign: "center",
+                marginBottom: "30px",
+                fontSize: "32px",
+              }}>
+              Year 2023
+            </h2>
+
+            <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  className="neu-button"
+                  style={{
+                    background:
+                      activeTab === index ? "var(--primary)" : "var(--light)",
+                    color: activeTab === index ? "white" : "var(--primary)",
+                  }}
+                  onClick={() => setActiveTab(index)}>
+                  {tab.name}
+                </button>
+              ))}
+            </div>
+
+            <div
+              className="glass-card"
+              style={{ background: "rgba(255,255,255,0.15)" }}>
+              <p style={{ lineHeight: "1.8", fontSize: "16px" }}>
+                {tabs[activeTab].content}
+              </p>
+            </div>
+          </section>
+        );
+      };
+      const Year2024 = () => {
+        const [activeTab, setActiveTab] = useState(0);
+
+        const tabs = [
+          {
+            name: "Next.js 14.2",
+            content:
+              "Next.js 14.2 brought smoother and faster web apps with better support for server-side rendering and streaming. It made React Server Components easier to use and improved image loading speeds. Developers can now build highly optimized pages that load quickly and respond faster to user actions.",
+          },
+          {
+            name: "React 19",
+            content:
+              "React 19 introduced big upgrades like Server Components (which allow better control over what runs on the server vs. browser) and improved how assets like images and scripts load. A new compiler called 'React Forget' was previewed, which helps React apps run faster by automatically optimizing code.",
+          },
+          {
+            name: "Node.js 22",
+            content:
+              "Node.js 22 made it easier and safer to build backend apps. It added a new system to control what files and network access code can have (called a “permission model”) and upgraded its JavaScript engine for better performance. Developers can now write faster and more secure server code.",
+          },
+          {
+            name: "Angular v18",
+            content:
+              "Angular v18 simplified how developers manage changing data with its new 'Signals' system. This makes it easier to track updates in the app and improves how fast the interface responds. It also helped pages load more quickly and made it easier for beginners to get started with Angular.",
+          },
+          {
+            name: "GitHub Copilot",
+            content:
+              "GitHub Copilot Chat became available to everyone and acts like a smart coding assistant inside code editors like VSCode. Developers can ask questions, get code suggestions, and even have tests written for them automatically all without leaving their coding environment.",
+          },
+          {
+            name: "Conclusion",
+            content:
+              "The year 2024 brought powerful improvements to web development tools, making it easier, faster, and more efficient to build modern applications. From frameworks like Next.js 14.2 and Angular v18 boosting performance and developer experience, to React 19 introducing smarter ways to manage code, the front-end landscape saw major progress. On the backend, Node.js 22 strengthened speed and security, while tools like GitHub Copilot Chat gave developers AI-powered help right inside their editors. Together, these updates show a clear trend: development is becoming more automated, optimized, and accessible than ever before.",
+          },
+        ];
+
+        return (
+          <section
+            className="glass-card animated fadeInUp delay-3"
+            style={{ marginTop: "40px" }}>
+            <h2
+              style={{
+                textAlign: "center",
+                marginBottom: "30px",
+                fontSize: "32px",
+              }}>
+              Year 2024
+            </h2>
+
+            <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  className="neu-button"
+                  style={{
+                    background:
+                      activeTab === index ? "var(--primary)" : "var(--light)",
+                    color: activeTab === index ? "white" : "var(--primary)",
+                  }}
+                  onClick={() => setActiveTab(index)}>
+                  {tab.name}
+                </button>
+              ))}
+            </div>
+
+            <div
+              className="glass-card"
+              style={{ background: "rgba(255,255,255,0.15)" }}>
+              <p style={{ lineHeight: "1.8", fontSize: "16px" }}>
+                {tabs[activeTab].content}
+              </p>
+            </div>
+          </section>
+        );
+      };
+      const Year2025 = () => {
+        const [activeTab, setActiveTab] = useState(0);
+
+        const tabs = [
+          {
+            name: "3D web design",
+            content:
+              "3D web design uses three-dimensional shapes and visuals to make websites more engaging. Instead of flat, boring pages, developers now add interactive 3D models or subtle effects like shadows and depth. This makes websites look more realistic and dynamic, especially on modern screens. For example, you might see a spinning product you can view from all angles just like holding it in your hand.",
+          },
+          {
+            name: "Motion UIMotion UI and 3D Elements",
+            content:
+              "Motion UI refers to animations that make a website feel alive. When you hover, scroll or click, you might see smooth transitions, sliding effects or moving backgrounds. Combined with 3D elements, these effects make websites feel more modern and fun to use. It's not just for looks, it helps users understand what’s happening on the page and keeps them engaged.",
+          },
+          {
+            name: "AI Creating Websites",
+            content:
+              "Artificial Intelligence (AI) is now helping build websites automatically. Tools powered by AI can design layouts, write content, suggest colors and even optimise for speed all with little to no human input. This saves time for developers and helps beginners create professional-looking sites. AI can also update sites in real time based on how visitors interact with them, making the web more personalised and efficient.",
+          },
+          {
+            name: "Conclusion",
+            content:
+              "The trends we see in 2025 like 3D web design, motion UI and AI-powered site building are only the beginning. Since the year isn’t over yet, more new ideas and tools will probably come soon. Web design keeps changing fast, so it’s important to keep learning and stay ready for what’s next.",
+          },
+        ];
+
+        return (
+          <section
+            className="glass-card animated fadeInUp delay-3"
+            style={{ marginTop: "40px" }}>
+            <h2
+              style={{
+                textAlign: "center",
+                marginBottom: "30px",
+                fontSize: "32px",
+              }}>
+              Year 2025
+            </h2>
+
+            <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  className="neu-button"
+                  style={{
+                    background:
+                      activeTab === index ? "var(--primary)" : "var(--light)",
+                    color: activeTab === index ? "white" : "var(--primary)",
+                  }}
+                  onClick={() => setActiveTab(index)}>
+                  {tab.name}
+                </button>
+              ))}
+            </div>
+
+            <div
+              className="glass-card"
+              style={{ background: "rgba(255,255,255,0.15)" }}>
+              <p style={{ lineHeight: "1.8", fontSize: "16px" }}>
+                {tabs[activeTab].content}
+              </p>
+            </div>
+          </section>
+        );
+      };
+
+      const Footer = () => {
+        return (
+          <footer
+            className="glass-card animated fadeInUp delay-3"
+            style={{ marginTop: "40px", textAlign: "center" }}>
+            <p>© 2025 Web Evolution Research Project. All rights reserved.</p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "20px",
+                marginTop: "15px",
+              }}>
+              <a
+                href="privacy-policy8.html"
+                style={{ color: "var(--primary)", textDecoration: "none" }}>
+                Privacy Policy
+              </a>
+            </div>
+          </footer>
+        );
+      };
+
+      const App = () => {
+        return (
+          <>
+            <div className="blob blob-1"></div>
+            <div className="blob blob-2"></div>
+            <div className="container">
+              <Navigation />
+              <Hero />
+              <Year2021 />
+              <Year2022 />
+              <Year2023 />
+              <Year2024 />
+              <Year2025 />
+              <Footer />
+            </div>
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

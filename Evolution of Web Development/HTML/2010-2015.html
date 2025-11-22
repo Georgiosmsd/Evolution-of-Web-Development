@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/2010-2015.css" />
+    <title>Evolution of Web Development</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+    <script type="text/babel">
+      const { useState } = React;
+
+      function App() {
+        const [activeTab, setActiveTab] = useState("year2011");
+
+        const renderTab = () => {
+          switch (activeTab) {
+            case "year2011":
+              return <Year2011 />;
+            case "year2012":
+              return <Year2012 />;
+            case "year2013":
+              return <Year2013 />;
+            case "year2014":
+              return <Year2014 />;
+            case "year2015":
+              return <Year2015 />;
+            default:
+              return <Year2011 />;
+          }
+        };
+
+        return (
+          <div className="container">
+            <div className="web-history-app">
+              <header className="header">
+                <h1>The Evolution of the Web</h1>
+                <div className="tagline">2011-2015</div>
+              </header>
+
+              <nav className="nav">
+                <div className="nav-inner">
+                  <a className="nav-item" href="Introduction.html">
+                    Introduction
+                  </a>
+                  <a className="nav-item" href="1990-1995.html">
+                    1990-1995
+                  </a>
+                  <a className="nav-item" href="1995-2000.html">
+                    1996-2000
+                  </a>
+                  <a className="nav-item" href="2000-2005.html">
+                    2001-2005
+                  </a>
+                  <a className="nav-item" href="2005-2010.html">
+                    2006-2010
+                  </a>
+                  <a className="nav-item" href="2010-2015.html">
+                    2011-2015
+                  </a>
+                  <a className="nav-item" href="2015-2020.html">
+                    2016-2020
+                  </a>
+                  <a className="nav-item" href="2020-2025.html">
+                    2021-2025
+                  </a>
+                </div>
+              </nav>
+
+              <div className="year-nav">
+                <div className="year-nav-inner">
+                  <a
+                    className={`year-nav-item ${
+                      activeTab === "year2011" ? "active" : ""
+                    }`}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveTab("year2011");
+                    }}>
+                    2011
+                  </a>
+                  <a
+                    className={`year-nav-item ${
+                      activeTab === "year2012" ? "active" : ""
+                    }`}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveTab("year2012");
+                    }}>
+                    2012
+                  </a>
+                  <a
+                    className={`year-nav-item ${
+                      activeTab === "year2013" ? "active" : ""
+                    }`}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveTab("year2013");
+                    }}>
+                    2013
+                  </a>
+                  <a
+                    className={`year-nav-item ${
+                      activeTab === "year2014" ? "active" : ""
+                    }`}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveTab("year2014");
+                    }}>
+                    2014
+                  </a>
+                  <a
+                    className={`year-nav-item ${
+                      activeTab === "year2015" ? "active" : ""
+                    }`}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveTab("year2015");
+                    }}>
+                    2015
+                  </a>
+                </div>
+              </div>
+
+              <main className="content">{renderTab()}</main>
+
+              <footer className="footer">
+                <p>
+                  © 2025 Web Evolution Research Project. All rights reserved.{" "}
+                  <a href="privacy-policy6.html">Privacy Policy</a>
+                </p>
+              </footer>
+            </div>
+          </div>
+        );
+      }
+
+      function Year2011() {
+        return (
+          <div>
+            <section className="section">
+              <h2>Year 2011</h2>
+              <h3>Introduction</h3>
+              <p>
+                From 2011 to 2015, websites became more modern, flexible, and
+                focused on mobile devices. As smartphones and tablets became
+                more popular, developers started building websites that could
+                adjust to different screen sizes. New tools like HTML5 and CSS3
+                helped add videos, animations, and better designs without
+                needing extra plugins. JavaScript frameworks like jQuery and
+                AngularJS also made it easier to build fast and interactive
+                websites.
+              </p>
+              <div className="era-box">
+                <p>
+                  On June 14, ECMAScript 5.1 was officially standardised by ECMA
+                  International as the latest change of the JavaScript language
+                  specification. This version served as a developed and more
+                  stable duplicate of ECMAScript 5 ensuring greater
+                  cross-browser compatibility and acting as the standard for
+                  modern JavaScript engines. ES 5.1 clarified and corrected
+                  doubts in the previous specification, providing a solid
+                  foundation for large-scale JavaScript applications. Core
+                  features such as Object.create, Object.defineProperty, strict
+                  mode and Array.prototype.forEach enabled developers to write
+                  more maintainable, modular and secure code. ES 5.1 would
+                  remain the dominant standard for several years until the
+                  release of ES6 (ECMAScript 2015), and it remains widely
+                  supported across virtually all browsers.
+                </p>
+              </div>
+
+              <div className="era-box">
+                <p>
+                  As mobile usage rose at that time, jQuery Mobile Beta 2 was
+                  created as a major step toward making mobile web development
+                  more accessible. Built on top of jQuery, this framework
+                  offered touch-optimised UI elements, simplified navigation and
+                  constant styling across iOS, Android and other mobile
+                  platforms. With progressive improvement in mind, it allowed
+                  developers to create responsive and accessible mobile
+                  interfaces using familiar syntax. Though eventually overtaken
+                  by more modern solutions like React Native and mobile-first
+                  frameworks, jQuery Mobile was essential in bridging the early
+                  gap between desktop and mobile web development.
+                </p>
+              </div>
+
+              <div className="era-box">
+                <p>
+                  In August, Twitter released Bootstrap v1.0 which was a
+                  frontend toolkit designed to help developers build responsive
+                  and consistent web interfaces more easily. Created by Mark
+                  Otto and Jacob Thornton Bootstrap introduced a grid system,
+                  ready-made components like buttons and forms and standardized
+                  CSS styles that could be used across projects. Its goal was to
+                  combine the UI development process across internal tools at
+                  Twitter, but it quickly became a global standard for frontend
+                  development. Bootstrap’s ease of use, responsive design
+                  support and built-in mobile-first idea made it a foundational
+                  tool in modern web development especially for developers
+                  seeking rapid prototyping and clean design out of the box.
+                </p>
+              </div>
+
+              <div className="era-box">
+                <p>
+                  By late 2011, AngularJS v1.0 beta was released, moving the
+                  framework closer to its full public debut. Developed at
+                  Google, AngularJS introduced powerful features such as two-way
+                  data binding, dependency injection and informative templates
+                  which drastically simplified dynamic frontend programming. The
+                  framework backed the Model View Controller (MVC) approach,
+                  allowing developers to build more structured and testable
+                  applications directly in the browser. The beta release created
+                  strong interest in the developer community and increased
+                  anticipation for its official 1.0 release in 2012.
+                </p>
+              </div>
+              <h3>Conclusion</h3>
+              <p>
+                The developments of 2011 made a more experienced and flexible
+                web development environment. ECMAScript 5.1 provided a reliable
+                foundation for JavaScript applications, while jQuery Mobile and
+                Bootstrap enabled responsive, touch-friendly design across
+                devices. AngularJS beta introduced a new way to structure
+                dynamic applications, pointing forward to the era of
+                full-featured JavaScript frameworks. These milestones not only
+                responded to the demands of their time but also helped define
+                the direction of the modern web.
+              </p>
+            </section>
+          </div>
+        );
+      }
+
+      function Year2012() {
+        return (
+          <div>
+            <section className="section">
+              <h2>Year 2012</h2>
+              <h3>Introduction</h3>
+              <p>
+                In 2012, web development moved forward in big ways. New tools
+                and frameworks made it easier for developers to build websites
+                that looked better, worked faster and adjusted well to different
+                screen sizes. With better support from browsers and simpler ways
+                to manage and share projects online, developers were able to
+                create more modern, user-friendly websites. These changes helped
+                shape the way websites are built today.
+              </p>
+              <div className="era-box">
+                <p>
+                  With the release of Bootstrap v2.0, Twitter’s frontend
+                  framework made responsive, mobile-first web development more
+                  accessible to developers of all skill levels. This version
+                  introduced a flexible 12-column grid system, extensive
+                  responsive utilities and several new UI components that
+                  supported adaptive layouts out of the box. By prioritising
+                  mobile compatibility, Bootstrap 2.0 aligned with the growing
+                  demand for websites that functioned seamlessly across devices.
+                  Its streamlined integration, strong documentation and solid
+                  visual styles helped it become one of the most widely adopted
+                  UI frameworks in the world.
+                </p>
+              </div>
+
+              <div className="era-box">
+                <p>
+                  In June 2012, Google officially released AngularJS v1.0,
+                  marking a big milestone in the progress of client-side web
+                  development. This framework introduced a declarative approach
+                  to building dynamic web applications using powerful features
+                  like two-way data binding, dependency injection and custom
+                  directives. AngularJS simplified the process of syncing data
+                  between the model and view, reducing boilerplate code and
+                  enabling a more modular architecture. Its highlighting
+                  testability and separation of concerns made it a game changer,
+                  especially for large-scale single-page applications (SPAs),
+                  setting a foundation for the reactive and component-based
+                  development models that would follow.
+                </p>
+              </div>
+
+              <div className="era-box">
+                <p>
+                  In August, jQuery 1.8 was released with significant
+                  performance improvements and a modular structure that allowed
+                  developers to customise builds. The update refactored the
+                  selector engine (Sizzle), improved animation handling and made
+                  the .data() API better. Perhaps most notably, it introduced
+                  the ability to build custom jQuery packages, helping
+                  developers reduce file size by including only the modules they
+                  needed. As jQuery continued to dominate DOM manipulation and
+                  event handling, version 1.8 demonstrated a shift toward
+                  performance tuning and developer flexibility.
+                </p>
+              </div>
+
+              <div className="era-box">
+                <p>
+                  By mid-2012, major browsers including Chrome, Firefox, Safari,
+                  and Internet Explorer 10 had implemented full or near to full
+                  support for HTML5 and CSS3, making modern web design
+                  techniques widely usable without the need for fallbacks or
+                  plugins. Developers could now confidently use semantic tags
+                  like article, section, and footer, along with CSS3 features
+                  such as transitions, transforms, media queries and custom
+                  fonts. This broad support allowed for more responsive,
+                  interactive, and visually appealing websites while also
+                  improving accessibility and maintainability.
+                </p>
+              </div>
+
+              <div className="era-box">
+                <p>
+                  In October, GitHub introduced custom domain support for GitHub
+                  Pages project sites, making it easier for developers to host
+                  professional websites and documentation directly from their
+                  Git sources. This feature allowed users to associate personal
+                  or business domains with static sites powered by Markdown,
+                  HTML or Jekyll. GitHub Pages quickly became a popular choice
+                  for portfolio sites, open-source documentation and blog
+                  hosting especially within the developer community. The move
+                  aligned with the growing JAMstack idea using Git, APIs and
+                  static files to build fast, secure and scalable web
+                  applications.
+                </p>
+              </div>
+              <h3>Conclusion</h3>
+              <p>
+                The changes in 2012 helped make web development faster, easier
+                and more flexible. Tools like AngularJS, Bootstrap and jQuery
+                gave developers better ways to design and manage websites while
+                growing support for HTML5 and CSS3 in major browsers made modern
+                features more reliable. These updates not only solved problems
+                at the time they also helped set the standards for how websites
+                are built today.
+              </p>
+            </section>
+          </div>
+        );
+      }
+
+      function Year2013() {
+        return (
+          <div>
+            <section className="section">
+              <h2>Year 2013</h2>
+              <h3>Introduction</h3>
+              <p>
+                The year 2013 was an important time for web development. As
+                websites became more advanced and users expected better
+                performance and design, developers needed new tools and ideas to
+                keep up. During this time, several important technologies were
+                introduced or improved. These changes helped developers build
+                faster, more flexible and more interactive websites.
+              </p>
+              <div className="era-box">
+                <p>
+                  In early 2013, Microsoft released Internet Explorer 10 for
+                  Windows 7. IE10 brought substantial improvements in support
+                  for HTML5, CSS3 and JavaScript performance, offering a more
+                  competitive experience compared to Chrome and Firefox at the
+                  time. Especially, it introduced better support for
+                  touch-enabled interfaces, aligning with Microsoft’s Windows 8
+                  design vision. While it retained support, IE10 signaled
+                  Microsoft’s attempt to align its browser more closely with
+                  modern web standards, making life easier for developers who
+                  previously struggled with older IE quirks.
+                </p>
+              </div>
+              <div className="era-box">
+                <p>
+                  After a year Twitter released Bootstrap 3 Alpha in February
+                  2013 marking a moment in the transition to mobile-first
+                  design. Unlike its predecessors, Bootstrap 3 was designed from
+                  scrap with responsive web development as the default. It moved
+                  to a flat UI aesthetic, aligning with broader industry trends
+                  like iOS 7’s minimalist interface. For developers, Bootstrap 3
+                  offered a grid system, pre-built UI components and
+                  cross-browser compatibility, all of which significantly
+                  accelerated front-end development workflows and contributed to
+                  the rise of design consistency across platforms.
+                </p>
+              </div>
+              <div className="era-box">
+                <p>
+                  In May, Facebook open-sourced React, a new JavaScript library
+                  focused on building user interfaces through component-based
+                  architecture. React’s key improvement was the virtual DOM,
+                  which enabled fast and efficient updates to the user interface
+                  without requiring full page reloads. Though initially met with
+                  doubt especially due to its inclusion of HTML-like JSX in
+                  JavaScript. React quickly gained traction for its performance.
+                  Over time, it changed frontend development practices, becoming
+                  the core of many modern frameworks and serving as the basis
+                  for React Native and Next.js.
+                </p>
+              </div>
+              <div className="era-box">
+                <p>
+                  RESTful APIs had become the default design for client-server
+                  communication in web development. Unlike SOAP-based services,
+                  REST offered a lightweight, stateless approach using standard
+                  HTTP methods (GET, POST, PUT, DELETE). This allowed developers
+                  to easily build frontends and scalable backend systems. The
+                  increase of mobile apps, SPAs and frameworks like AngularJS
+                  pushed REST into the spotlight, making it the go-to method for
+                  exposing data and integrating third-party services.
+                </p>
+              </div>
+              <div className="era-box">
+                <p>
+                  The release of AngularJS 1.2 in September brought major
+                  improvements to what was already becoming one of the most
+                  popular single-page application (SPA) frameworks. With
+                  features like animations support, improved routing and more
+                  modular architecture, version 1.2 made it easier to build
+                  dynamic, client-side applications entirely within the browser.
+                  Its two-way data binding model, dependency injection and
+                  MVC-based approach redefined how developers approached web app
+                  architecture, making front-end development significantly more
+                  effective and maintainable.
+                </p>
+              </div>
+              <h3>Conclusion</h3>
+              <p>
+                By the end of 2013, web development had changed in major ways.
+                New tools and frameworks often built with JavaScript, HTML5 and
+                CSS3 made it easier to create modern websites and web apps that
+                worked well across different devices. Technologies like
+                AngularJS, Bootstrap and React helped developers build more
+                dynamic and responsive interfaces, while RESTful APIs improved
+                how data was shared between systems. These advances made web
+                development faster, more efficient and laid the foundation for
+                many of the websites and apps we use today.
+              </p>
+            </section>
+          </div>
+        );
+      }
+
+      function Year2014() {
+        return (
+          <div>
+            <section className="section">
+              <h2>Year 2014</h2>
+              <h3>Introduction</h3>
+              <p>
+                Web development saw big changes that made building websites and
+                apps easier, faster, and more user-friendly. Important tools and
+                platforms were updated to help developers create better designs,
+                improve site speed, and support more devices like phones and
+                tablets. This year also marked a shift toward using smaller,
+                reusable parts in website structures and more flexible design
+                systems. These changes helped shape how modern websites are
+                built today.
+              </p>
+              <div className="era-box">
+                <p>
+                  AngularJS 1.3 had a big change in JavaScript framework by
+                  focusing heavily on performance and usability improvements.
+                  This release introduced one-time data bindings which allowed
+                  developers to reduce the overhead of Angular’s two-way data
+                  binding by freezing parts of the DOM that no longer needed to
+                  update dynamically. It also criticised support for outdated
+                  browsers like IE8, signaling a forward-looking approach.
+                  AngularJS 1.3 covered the way for the architectural rethink
+                  that led to Angular 2, emphasizing modularity and performance.
+                </p>
+              </div>
+              <div className="era-box">
+                <p>
+                  Named after jazz musician Jimmy Smith, WordPress 3.9 was a
+                  major step forward in CMS usability and content creation. It
+                  delivered a more intuitive visual editing experience through
+                  an improved TinyMCE editor, enabling users to paste directly
+                  from Microsoft Word without unwanted markup. Media handling
+                  became more fluid with drag and drop image uploads and live
+                  gallery previews. Additionally, theme customisation was
+                  improved with real time widget editing, making WordPress an
+                  even more user-friendly platform for developers and content
+                  creators alike.
+                </p>
+              </div>
+              <div className="era-box">
+                <p>
+                  Bootstrap 3.2 focused on improving responsiveness and
+                  accessibility, key components of modern frontend development.
+                  The update introduced new responsive utility classes and
+                  enhanced the handling of modals, dropdowns and tooltips for
+                  better usability on smaller devices. It also added ARIA
+                  attributes to improve compatibility with screen readers. While
+                  not as transformational as the major 3.0 release, version 3.2
+                  solidified Bootstrap’s position as the leading CSS framework
+                  and underscored its commitment to mobile-first design
+                  principles.
+                </p>
+              </div>
+              <div className="era-box">
+                <p>
+                  The W3C officially published the HTML5 specification as a W3C
+                  Recommendation, announcing that the standard was stable and
+                  ready for widespread performance. This milestone brought a new
+                  era of semantic web development, media embedding without
+                  plugins and APIs for offline storage, geolocation and drag and
+                  drop interfaces. It formalized features like video, canvas and
+                  section, enabling developers to build richer, more interactive
+                  applications directly in the browser.{" "}
+                </p>
+              </div>
+              <div className="era-box">
+                <p>
+                  React 0.12 was an important release that helped influence the
+                  future of component-based UI development. This version
+                  introduced a new module format and clearer separation between
+                  React core and tools, laying the basis for React 0.13 and the
+                  eventual release of React 1.0. Although relatively minor in
+                  terms of new features, 0.12 served as an improvement phase
+                  which improved the API, deprecating older patterns and
+                  enhancing the developer experience. The news around React in
+                  2014 grew significantly, helping it transition from a
+                  Facebook-only experiment to a mainstream JavaScript library.
+                </p>
+              </div>
+              <h3>Conclusion</h3>
+              <p>
+                The updates and tools released in 2014 had a lasting impact on
+                how we build for the web. Technologies like HTML5, JavaScript
+                frameworks such as AngularJS and React and styling tools like
+                Sass gave developers more power to create faster, cleaner and
+                more flexible websites. Platforms like WordPress also made it
+                easier to manage content and design responsive layouts. These
+                improvements helped popularise modern development practices and
+                made it easier for people to build websites and web apps that
+                work well on all devices.
+              </p>
+            </section>
+          </div>
+        );
+      }
+      function Year2015() {
+        return (
+          <div>
+            <section className="section">
+              <h2>Year 2015</h2>
+              <h3>Introduction</h3>
+              <p>
+                In 2015, web development continued to evolve quickly, with new
+                tools and updates that made it easier to build modern websites
+                and apps. Developers focused more on creating faster, more
+                interactive user experiences that worked well across all
+                devices. This year saw big improvements in how websites were
+                designed, built and updated. New ideas about structure,
+                performance and user interaction helped shape the future of web
+                development and gave developers more control over their work.
+              </p>
+              <div className="era-box">
+                <p>
+                  In June, the final draft of ECMAScript 6 was completed,
+                  bringing big improvements to JavaScript. It added helpful
+                  features like “let” and “const” for clearer variable handling,
+                  arrow functions for simpler syntax and template strings for
+                  better formatting. ES6 also introduced classes, modules and
+                  promises, making it easier to write clean and organised code.
+                  These changes helped developers manage large codebases more
+                  effectively and brought JavaScript up to modern programming
+                  standards used in bigger apps and websites.
+                </p>
+              </div>
+              <div className="era-box">
+                <p>
+                  In March, React Native was officially released by Facebook.
+                  This new tool let developers use JavaScript and React to build
+                  real native mobile apps for iOS and Android. Unlike older
+                  methods that used web views, React Native created actual
+                  native components, which meant faster and more responsive
+                  apps. Developers liked it because they could use the same
+                  codebase for both platforms, saving time and effort. It also
+                  let web developers build mobile apps without learning new
+                  programming languages like Swift or Java.
+                </p>
+              </div>
+              <div className="era-box">
+                <p>
+                  On June, WordPress 4.2 called “Powell,” was released with
+                  features that improved user experience. It made plugin updates
+                  faster with one click upgrades, added support for emojis, and
+                  improved how different languages were handled. There were also
+                  changes to how themes and embeds worked, making it easier for
+                  users to customize sites. WordPress 4.2 continued to show why
+                  WordPress was one of the most popular content systems, helping
+                  people around the world build and manage websites easily.
+                </p>
+              </div>
+              <div className="era-box">
+                <p>
+                  Microsoft launched Edge, a new browser that came with Windows
+                  10. It replaced Internet Explorer and aimed to be faster and
+                  more modern. Edge supported the latest web standards like
+                  HTML5 and CSS3 which made websites look and run better. It had
+                  a clean design, better security and features like voice search
+                  through Cortana. While it took time to catch on, Edge showed
+                  that Microsoft was serious about improving how people browse
+                  and developers build the web.
+                </p>
+              </div>
+              <div className="era-box">
+                <p>
+                  In October, Vue.js reached version 1.0 offering developers a
+                  simple and flexible way to build user interfaces. Created by
+                  Evan You, Vue took ideas from Angular and React but kept
+                  things lightweight and easy to use. It used templates,
+                  components and reactive data binding to help developers build
+                  apps faster. Vue’s design made it perfect for small projects
+                  or for adding to existing websites without starting from
+                  scratch. Its release in 2015 helped it grow into one of the
+                  most popular frontend tools.
+                </p>
+              </div>
+              <div className="era-box">
+                <p>
+                  Google released the beta version of Angular 2 in December, a
+                  complete rebuild of their original AngularJS framework.
+                  Angular 2 focused on using components instead of controllers,
+                  which made apps easier to build and maintain. It also used
+                  TypeScript, a special version of JavaScript that helps catch
+                  errors and organize code better. This version made apps
+                  faster, cleaner and more modern. Developers started to shift
+                  toward using Angular 2 for larger and more advanced web
+                  applications.
+                </p>
+              </div>
+              <h3>Conclusion</h3>
+              <p>
+                By the end of 2015, many of the tools and updates released that
+                year had already started to change how developers worked.
+                Technologies like React Native, Angular 2 and Vue.js gave
+                developers new ways to build fast and flexible apps. The release
+                of WordPress 4.2 and the Microsoft Edge browser showed how
+                important speed, design and mobile support had become. With the
+                final draft of ECMAScript 6, JavaScript also became more
+                powerful and easier to use. These changes made web development
+                more efficient and opened the door to even bigger advances in
+                the years ahead.
+              </p>
+            </section>
+          </div>
+        );
+      }
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

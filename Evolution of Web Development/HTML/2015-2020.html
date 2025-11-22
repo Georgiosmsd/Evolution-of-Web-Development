@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/2015-2020.css" />
+    <title>Evolution of Web Development</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script type="text/babel" src="app.jsx"></script>
+
+    <script type="text/babel">
+      const { useState } = React;
+
+      function App() {
+        const [activeTab, setActiveTab] = useState("year2016");
+
+        const renderTab = () => {
+          switch (activeTab) {
+            case "year2016":
+              return <Year2016 />;
+            case "year2017":
+              return <Year2017 />;
+            case "year2018":
+              return <Year2018 />;
+            case "year2019":
+              return <Year2019 />;
+            case "year2020":
+              return <Year2020 />;
+            default:
+              return <Year2016 />;
+          }
+        };
+
+        return (
+          <div className="container">
+            <div className="web-history-app">
+              <header>
+                <div class="container">
+                  <h1>The Evolution of the Web</h1>
+                  <p class="tagline">2016-2020</p>
+                </div>
+              </header>
+
+              <nav className="nav">
+                <div className="nav-inner">
+                  <a className="nav-item" href="Introduction.html">
+                    Introduction
+                  </a>
+                  <a className="nav-item" href="1990-1995.html">
+                    1990-1995
+                  </a>
+                  <a className="nav-item" href="1995-2000.html">
+                    1996-2000
+                  </a>
+                  <a className="nav-item" href="2000-2005.html">
+                    2001-2005
+                  </a>
+                  <a className="nav-item" href="2005-2010.html">
+                    2006-2010
+                  </a>
+                  <a className="nav-item" href="2010-2015.html">
+                    2011-2015
+                  </a>
+                  <a className="nav-item" href="2015-2020.html">
+                    2016-2020
+                  </a>
+                  <a className="nav-item" href="2020-2025.html">
+                    2021-2025
+                  </a>
+                </div>
+              </nav>
+
+              <div className="year-nav">
+                <div className="year-nav-inner">
+                  <a
+                    className={`year-nav-item ${
+                      activeTab === "year2016" ? "active" : ""
+                    }`}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveTab("year2016");
+                    }}>
+                    2016
+                  </a>
+                  <a
+                    className={`year-nav-item ${
+                      activeTab === "year2017" ? "active" : ""
+                    }`}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveTab("year2017");
+                    }}>
+                    2017
+                  </a>
+                  <a
+                    className={`year-nav-item ${
+                      activeTab === "year2018" ? "active" : ""
+                    }`}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveTab("year2018");
+                    }}>
+                    2018
+                  </a>
+                  <a
+                    className={`year-nav-item ${
+                      activeTab === "year2019" ? "active" : ""
+                    }`}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveTab("year2019");
+                    }}>
+                    2019
+                  </a>
+                  <a
+                    className={`year-nav-item ${
+                      activeTab === "year2020" ? "active" : ""
+                    }`}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setActiveTab("year2020");
+                    }}>
+                    2020
+                  </a>
+                </div>
+              </div>
+
+              <main className="content">{renderTab()}</main>
+
+              <footer className="footer">
+                <p>
+                  © 2025 Web Evolution Research Project. All rights reserved.{" "}
+                  <a href="privacy-policy7.html">Privacy Policy</a>
+                </p>
+              </footer>
+            </div>
+          </div>
+        );
+      }
+
+      function Year2016() {
+        return (
+          <section id="2016-2020" className="timeline-section">
+            <div className="container">
+              <h2 className="section-title">
+                2016 – 2020: The Rise of Progressive Web
+              </h2>
+              <h2 className="section-title">2016</h2>
+
+              <div className="intro-card">
+                <div className="card-content">
+                  <h3>Introduction</h3>
+                  <p>
+                    The year 2016 brought important updates and new tools that
+                    helped web developers build faster, more flexible and better
+                    looking websites and apps. As users expected smoother
+                    experiences across phones, tablets and desktops, developers
+                    needed more reliable and modern solutions. This year focused
+                    on improving layout systems, editing tools, performance and
+                    user interface design. These changes made it easier for both
+                    new and experienced developers to create more professional
+                    and responsive web experiences.
+                  </p>
+                </div>
+              </div>
+
+              <div className="cards">
+                <div className="card">
+                  <div className="card-content">
+                    <h3>Bootstrap 4 Alpha</h3>
+                    <p>
+                      The alpha version of Bootstrap 4 was released, bringing
+                      big improvements to one of the most popular frontend
+                      frameworks. It introduced Flexbox, which made it easier to
+                      build flexible and responsive layouts. Bootstrap 4 also
+                      switched to Sass instead of Less, giving developers more
+                      control over styles. Other new features included updated
+                      components like cards and a simpler grid system. Although
+                      it was still in alpha, this version showed the direction
+                      Bootstrap was heading—cleaner design, better tools and
+                      more mobile-friendly layouts.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="card">
+                  <div className="card-content">
+                    <h3>WordPress 4.5 “Coleman”</h3>
+                    <p>
+                      WordPress 4.5, called “Coleman”, was released and focused
+                      on making website editing easier. One of the key features
+                      was live responsive previews, which let users see how
+                      their site looked on different devices while editing. It
+                      also added simpler ways to add links and improve images,
+                      such as automatic image resizing for faster loading. These
+                      changes helped both beginners and advanced users create
+                      better websites without needing extra tools or code.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="card">
+                  <div className="card-content">
+                    <h3>React v15.3</h3>
+                    <p>
+                      React v15.3 was released with updates that improved
+                      performance and made apps easier to manage. One important
+                      change was the move to a separate prop-types package,
+                      which made checking component data clearer and cleaner. It
+                      also introduced pure components, which helped make apps
+                      faster by avoiding unnecessary re-renders. These updates
+                      prepared React for even bigger changes coming later, like
+                      the new rendering system called Fiber.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="card">
+                  <div className="card-content">
+                    <h3>Vue.js 2.0</h3>
+                    <p>
+                      Vue.js 2.0 came out as a major update to the already
+                      growing JavaScript framework. This version added a virtual
+                      DOM, which made apps run faster and smoother. It also
+                      simplified how components worked and made it easier to
+                      reuse and manage parts of a webpage. Vue 2.0 kept its easy
+                      learning curve but added more power, helping it become a
+                      favorite among developers looking for a clean and flexible
+                      tool for building modern web apps.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div className="intro-card">
+                <div className="card-content">
+                  <h3>Conclusion</h3>
+                  <p>
+                    By the end of 2016, web development had become more advanced
+                    and user-focused thanks to updates like Bootstrap 4 Alpha,
+                    WordPress 4.5, React v15.3, and Vue.js 2.0. Each of these
+                    tools introduced features that improved how websites looked,
+                    performed, and were built—whether through better layout
+                    control, faster editing, or smarter ways to manage app
+                    behavior. These updates helped shape the modern web and made
+                    it easier for developers to create great experiences across
+                    all devices.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      }
+      function Year2017() {
+        return (
+          <section id="2016-2020" className="timeline-section">
+            <div className="container">
+              <h2 className="section-title">
+                2016 – 2020: The Rise of Progressive Web
+              </h2>
+              <h2 className="section-title">2017</h2>
+              <div className="intro-card">
+                <div className="card-content">
+                  <h3>Introduction</h3>
+                  <p>
+                    Web development continued to move forward with tools and
+                    technologies that helped developers build faster, smarter
+                    and more flexible websites and apps. This year focused on
+                    improving performance, better user experiences and easier
+                    ways to manage both the front and back ends of applications.
+                    New features and design patterns gave developers more
+                    control and helped them build projects that were easier to
+                    scale, maintain and deploy across different platforms and
+                    devices.
+                  </p>
+                </div>
+              </div>
+              <div className="cards">
+                <div className="card">
+                  <div className="card-content">
+                    <h3>Node.js v8 </h3>
+                    <p>
+                      In May, Node.js v8 became the official Long Term Support
+                      (LTS) version, meaning it was stable and ready for use in
+                      production. This update included better performance and
+                      support for async/await which made it easier to write
+                      clean and readable code when working with servers and
+                      databases. It also introduced tools like the V8 JavaScript
+                      engine update and built-in utilities to improve speed and
+                      memory usage. Node.js v8 made server-side JavaScript
+                      development smoother and more powerful.
+                    </p>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="card-content">
+                    <h3>Angular 5</h3>
+                    <p>
+                      Later in 2017, Angular 5 entered its release candidate
+                      phase. This version focused on making apps load faster and
+                      reducing the size of downloaded files. It also improved
+                      support for Progressive Web Apps (PWAs), allowing websites
+                      to work more like mobile apps. Other updates included
+                      better error messages, faster builds and smoother updates.
+                      Angular 5 helped developers build modern, high-performance
+                      apps that worked well across different platforms.
+                    </p>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="card-content">
+                    <h3>Backend Evolution</h3>
+                    <p>
+                      Throughout 2017, web developers saw big changes in how
+                      backends were built. Tools like GraphQL started gaining
+                      popularity, letting apps request only the data they needed
+                      instead of large, fixed sets. More teams have moved from
+                      huge systems to microservices where apps are split into
+                      smaller, independent parts. This made it easier to scale,
+                      update and test different features. Combined with cloud
+                      services and serverless functions, back-end development
+                      became faster, more flexible and easier to manage.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div className="intro-card">
+                <div className="card-content">
+                  <h3>Conclusion</h3>
+                  <p>
+                    By the end of 2016, web development had become more advanced
+                    and user-focused thanks to updates like Bootstrap 4 Alpha,
+                    WordPress 4.5, React v15.3, and Vue.js 2.0. Each of these
+                    tools introduced features that improved how websites looked,
+                    performed, and were built—whether through better layout
+                    control, faster editing, or smarter ways to manage app
+                    behavior. These updates helped shape the modern web and made
+                    it easier for developers to create great experiences across
+                    all devices.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      }
+      function Year2018() {
+        return (
+          <section id="2016-2020" className="timeline-section">
+            <div className="container">
+              <h2 className="section-title">
+                2016 – 2020: The Rise of Progressive Web
+              </h2>
+              <h2 className="section-title">2018</h2>
+              <div className="intro-card">
+                <div className="card-content">
+                  <h3>Introduction</h3>
+                  <p>
+                    In 2018, web development continued to grow with new tools
+                    and updates that made building modern websites and
+                    applications more efficient. The focus shifted toward better
+                    speed, easier maintenance and improved user experiences.
+                    Developers gained new ways to manage project updates,
+                    optimise performance and create apps that worked well across
+                    different devices and network conditions. This year helped
+                    shape how people build the web today by making development
+                    faster, smarter, and more user-friendly.
+                  </p>
+                </div>
+              </div>
+              <div className="cards">
+                <div className="card">
+                  <div className="card-content">
+                    <h3> Node.js v10 </h3>
+                    <p>
+                      Node.js v10 was released with new features and performance
+                      improvements. It became a Long Term Support (LTS) version
+                      later that year, making it a reliable choice for
+                      production. One of the main highlights was better error
+                      handling and stability, as well as improvements to the V8
+                      JavaScript engine which made apps run faster. Developers
+                      also gained access to more advanced tools like native
+                      diagnostic reporting, helping them debug and manage
+                      server-side apps more easily.
+                    </p>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="card-content">
+                    <h3>Angular 6</h3>
+                    <p>
+                      Angular 6, released in May, focused on making development
+                      faster and updates easier. It introduced Angular CLI 6,
+                      which added tools like ng update to help developers
+                      upgrade their projects more smoothly. It also improved the
+                      build process and reduced bundle sizes, making apps load
+                      faster. Support for progressive web apps (PWAs) was
+                      enhanced, and developers could now share code more easily
+                      between libraries and applications using the new Angular
+                      Elements and Schematics tools.
+                    </p>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="card-content">
+                    <h3>Next.js 7.0</h3>
+                    <p>
+                      In September, Next.js 7.0 brought important updates that
+                      made building React-based websites and apps easier and
+                      more flexible. It introduced dynamic imports with
+                      server-side rendering, allowing parts of a website to load
+                      only when needed which improved performance. This version
+                      also added built-in TypeScript support saving developers
+                      time when setting up projects. These changes helped make
+                      Next.js one of the top choices for fast, scalable and
+                      SEO-friendly web applications.
+                    </p>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="card-content">
+                    <h3>React 16.6</h3>
+                    <p>
+                      React 16.6 was released later that year and it included
+                      new features that made apps load faster and organise code
+                      better. The two main updates were React.lazy and Suspense,
+                      which let developers split code into smaller pieces and
+                      load them only when needed. This made it easier to build
+                      large apps without slowing down the user experience. React
+                      16.6 helped improve both performance and developer
+                      workflow, especially for apps with many pages or
+                      components.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div className="intro-card">
+                <div className="card-content">
+                  <h3>Conclusion</h3>
+                  <p>
+                    By the end of 2018, tools like Node.js v10, Angular 6,
+                    Next.js 7.0 and React 16.6 had introduced powerful features
+                    that made web development more flexible and efficient. From
+                    better update systems and server tools to smart loading
+                    features and performance improvements, these updates helped
+                    developers build faster and more scalable websites and apps.
+                    They also made it easier to manage complex projects, setting
+                    the stage for future innovations in modern web technology.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      }
+      function Year2019() {
+        return (
+          <section id="2016-2020" className="timeline-section">
+            <div className="container">
+              <h2 className="section-title">
+                2016 – 2020: The Rise of Progressive Web
+              </h2>
+              <h2 className="section-title">2019</h2>
+              <div className="intro-card">
+                <div className="card-content">
+                  <h3>Introduction</h3>
+                  <p>
+                    In 2019, web development saw major improvements focused on
+                    better performance, faster workflows and easier content
+                    creation. New tools and updates were designed to help
+                    developers build websites and apps that were quicker to
+                    load, easier to maintain, and more user-friendly. From
+                    backend improvements to new editing experiences, these
+                    changes reflected the growing need for flexibility, speed
+                    and modern design in both small and large projects.
+                  </p>
+                </div>
+              </div>
+              <div className="cards">
+                <div className="card">
+                  <div className="card-content">
+                    <h3> Next.js 8.0 </h3>
+                    <p>
+                      Next.js 8.0 came out with major improvements for building
+                      modern web apps. One of the most important new features
+                      was support for serverless deployment, allowing developers
+                      to run parts of their app as individual cloud functions.
+                      It also added dynamic routing and smarter ways to load
+                      content faster. These updates made Next.js even more
+                      useful for creating high-performance websites that could
+                      be scaled easily.
+                    </p>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="card-content">
+                    <h3> Node.js v12 </h3>
+                    <p>
+                      Node.js v12 was released in early 2019 and became a
+                      Long-Term Support (LTS) version later that year. It
+                      brought several improvements for server-side development,
+                      such as faster startup time and better support for
+                      handling errors and debugging. One key update was support
+                      for TLS 1.3, which made web connections more secure.
+                      Node.js v12 helped developers build faster, more stable
+                      and safer backend applications.
+                    </p>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="card-content">
+                    <h3> Angular 8.2 </h3>
+                    <p>
+                      Angular 8.2 continued to improve how web apps were built
+                      and run. This version made lazy loading easier and faster
+                      which meant apps could load only the parts users needed at
+                      the moment. It also improved the build speed, helping
+                      developers save time during testing and deployment. These
+                      updates made Angular apps more efficient and smoother for
+                      users, especially on slower connections or devices.
+                    </p>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="card-content">
+                    <h3> WordPress 5.0 </h3>
+                    <p>
+                      In late 2019, WordPress 5.0 nicknamed “Bebo,” became
+                      widely used across websites. Its biggest change was the
+                      introduction of the Gutenberg block editor which allowed
+                      users to create content using a drag and drop block system
+                      instead of a traditional text editor. This update gave
+                      people more control over how their pages looked without
+                      needing extra plugins or custom code. It made website
+                      building easier and more visual, especially for users
+                      without coding experience.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div className="intro-card">
+                <div className="card-content">
+                  <h3>Conclusion</h3>
+                  <p>
+                    By the end of 2019, tools like WordPress 5.0 “Bebo”, Node.js
+                    v12, Next.js 8.0, and Angular 8.2 had helped shape a more
+                    powerful and efficient web development landscape. Each one
+                    introduced features that made websites easier to build, more
+                    secure, and faster to run. Whether through visual editing,
+                    faster backend tools, or smart content loading, these
+                    updates gave developers better ways to create modern digital
+                    experiences for all kinds of users.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      }
+      function Year2020() {
+        return (
+          <section id="2016-2020" className="timeline-section">
+            <div className="container">
+              <h2 className="section-title">
+                2016 – 2020: The Rise of Progressive Web
+              </h2>
+              <h2 className="section-title">2020</h2>
+              <div className="intro-card">
+                <div className="card-content">
+                  <h3>Introduction</h3>
+                  <p>
+                    The year 2016 brought important updates and new tools that
+                    helped web developers build faster, more flexible and better
+                    looking websites and apps. As users expected smoother
+                    experiences across phones, tablets and desktops, developers
+                    needed more reliable and modern solutions. This year focused
+                    on improving layout systems, editing tools, performance and
+                    user interface design. These changes made it easier for both
+                    new and experienced developers to create more professional
+                    and responsive web experiences.
+                  </p>
+                </div>
+              </div>
+              <div className="cards">
+                <div className="card">
+                  <div className="card-content">
+                    <h3> Node.js v14 </h3>
+                    <p>
+                      Node.js v14 became the Long-Term Support (LTS) version. It
+                      introduced new features like optional chaining and nullish
+                      combining which made server-side code cleaner and easier
+                      to write. It also improved performance and included
+                      updates to the JavaScript engine for better speed. These
+                      changes made it a solid choice for building modern backend
+                      systems and reliable web servers.
+                    </p>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="card-content">
+                    <h3> Next.js 9.4 </h3>
+                    <p>
+                      Next.js 9.4 brought several new features that improved the
+                      way web pages were built and updated. It introduced
+                      built-in image optimisation to help websites load faster
+                      and added fast refresh which let developers see changes
+                      immediately as they coded. It also improved how static
+                      pages were generated, making websites run faster and work
+                      better with content that doesn’t change often. These
+                      updates helped developers create high-performance websites
+                      more easily.
+                    </p>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="card-content">
+                    <h3> Vue.js 3 </h3>
+                    <p>
+                      Vue.js 3 was introduced, first as a preview and later as a
+                      full stable release. This version brought major
+                      improvements to performance and made the framework more
+                      flexible for large projects. One of its biggest changes
+                      was the Composition API which allowed developers to
+                      organise and reuse code more easily. It also added better
+                      support for modern tools like TypeScript. These updates
+                      made Vue faster, more efficient and easier to scale for
+                      big web apps.
+                    </p>
+                  </div>
+                </div>
+                <div className="card">
+                  <div className="card-content">
+                    <h3> React 17 </h3>
+                    <p>
+                      React 17 came out as a Release Candidate in May 2020 and
+                      focused mainly on improving how apps could be updated over
+                      time. While it didn’t add new features, it made it easier
+                      for developers to upgrade parts of their app without
+                      breaking others. This version also prepared React to work
+                      better with future features like concurrent rendering, and
+                      helped teams slowly adopt changes without doing full
+                      rewrites.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div className="intro-card">
+                <div className="card-content">
+                  <h3>Conclusion</h3>
+                  <p>
+                    By the end of 2020, tools like Vue.js 3, React 17, Next.js
+                    9.4, and Node.js v14 had provided developers with smarter
+                    ways to build and maintain web applications. These updates
+                    focused on performance, flexibility and ease of use whether
+                    through better image handling, cleaner code organisation or
+                    faster feedback during development. They helped teams
+                    deliver high-quality websites and apps more efficiently,
+                    setting strong foundations for future web technologies.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      }
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

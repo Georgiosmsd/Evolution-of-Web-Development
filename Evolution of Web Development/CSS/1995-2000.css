@@ -1,0 +1,48 @@
+body {
+  background-color: #a3a2a2;
+  font-family: "Courier New", monospace;
+  color: black;
+  text-align: center;
+}
+
+.container {
+  border: 2px solid black;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.navbar {
+  background-color: #0000ff;
+  color: white;
+  padding: 5px;
+}
+
+.navbar a {
+  color: yellow;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+marquee {
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+}
+@media (max-width: 800px) {
+  .P,
+  div {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
